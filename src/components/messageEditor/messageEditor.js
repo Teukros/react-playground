@@ -19,7 +19,7 @@ class messageEditor extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   };
 
-  getValidationState() {
+  getValidationState(){
     const length = this.state.value.length;
     if (length > 10) return 'success';
     else if (length > 5) return 'warning';
