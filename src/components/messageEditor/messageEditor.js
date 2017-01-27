@@ -17,7 +17,6 @@ const inputStyle = {
   textAlign: "center"
 
 }
-
 const mainAreaInputStyle = {
   marginLeft: "5em"
 }
