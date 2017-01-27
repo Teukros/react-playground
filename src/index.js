@@ -14,7 +14,8 @@ const container = document.querySelector('.app');
 const posts = storage.getPosts();
 
 const App = () => (
-  <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+  //<MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+  <MuiThemeProvider>
     <AppComponent posts = {posts}/>
   </MuiThemeProvider>
 );
