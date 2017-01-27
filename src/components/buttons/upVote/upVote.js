@@ -33,6 +33,7 @@ class UpVote extends React.Component {
         hoverColor="#8AA62F"
         icon={<Add color={fullWhite}/>}
         style={style}
+        onTouchTap={this.handleClick}
         label={`votes: ${JSON.stringify(this.state.localCounter)}`}
         labelPosition="before"
         primary={true}
