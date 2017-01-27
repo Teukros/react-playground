@@ -21,6 +21,7 @@ class messageDisplayText extends React.Component {
       padding: "10px"};
 
     return (
+
       <div>
         LIST:
         <ListGroup>
@@ -40,4 +41,3 @@ class messageDisplayText extends React.Component {
 }
 
 module.exports = messageDisplayText;
-

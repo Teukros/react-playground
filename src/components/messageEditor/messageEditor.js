@@ -40,11 +40,11 @@ const floatingLabelStyle = {
 const sendButtonStyle = {
   color: "white",
   display: "block",
-  width:"3em"
+  width: "3em"
 }
-const buttonDivHolder={
-  display:"flex",
-  justifyContent:"center"
+const buttonDivHolder = {
+  display: "flex",
+  justifyContent: "center"
 }
 
 class messageEditor extends React.Component {
@@ -73,16 +73,38 @@ class messageEditor extends React.Component {
 
   render() {
     return (
-<div>
-      <div style={divForInputStyle}>
-        <TextField id="text-field-controlled" value={this.state.value} onChange={this.handleChange} id="formBasicText" defaultValue="dupa" inputStyle={inputStyle} textareaStyle={inputStyle} multiLine="true" style={mainAreaInputStyle} underlineShow="true" underlineStyle={underlineStyle} floatingLabelFixed="true" floatingLabelText="Working example with validation" floatingLabelStyle={floatingLabelStyle}/>
+      <div>
+        <div style={divForInputStyle}>
+          <TextField id="text-field-controlled" value={this.state.value} onChange={this.handleChange} id="formBasicText" defaultValue="dupa" inputStyle={inputStyle} textareaStyle={inputStyle} multiLine="true" style={mainAreaInputStyle} underlineShow="true" underlineStyle={underlineStyle} floatingLabelFixed="true" floatingLabelText="Working example with validation" floatingLabelStyle={floatingLabelStyle}/>
 
+        </div>
+        <div style={buttonDivHolder}>
+          <RaisedButton label="Wyślij" primary={true} style={sendButtonStyle} labelStyle={sendButtonStyle}/>
+        </div>
+      </div>
 
-      </div>
-      <div style={buttonDivHolder}>
-              <RaisedButton label="Wyślij" primary={true} style={sendButtonStyle} labelStyle={sendButtonStyle}/>
-      </div>
-</div>
+    /* <form >
+      <FormGroup
+        controlId="formBasicText"
+        validationState={this.getValidationState()}
+      >
+        <ControlLabel>Working example with validation</ControlLabel>
+        <FormControl
+          type="text"
+          value={this.state.value}
+          placeholder="Enter text"
+          onChange={this.handleChange}
+
+        />
+        <FormControl.Feedback />
+        <Button type="button"
+                onClick={ () => { storage.addPost(this.state.value)} }
+          >
+          Submit
+        </Button>
+        <HelpBlock>Validation is based on string length.</HelpBlock>
+      </FormGroup>
+    </form> */
 
     );
   }

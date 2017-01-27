@@ -14,8 +14,7 @@ constructor(props){
   render(){
 
     return (
-      <div>Here are messages from messageDisplayBox
-        <RaisedButton label="Default" />
+      <div>
       <MessageDisplayText posts = {this.props.posts}/>
     </div>);
   }
