@@ -14,7 +14,11 @@ constructor(props){
   render(){
 
     return (
+<<<<<<< HEAD
       <div>
+=======
+      <div>Here are messages from messageDisplayBox
+>>>>>>> 9656f90f669f54cc59b9623e1edbe291f47d8446
       <MessageDisplayText posts = {this.props.posts}/>
     </div>);
   }

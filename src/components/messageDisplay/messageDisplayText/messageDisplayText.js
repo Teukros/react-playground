@@ -1,10 +1,11 @@
 'use strict';
-import * as ReactBootstrap from 'react-bootstrap';
 
 const React = require('react'),
-  Counter = require('../../counter/counter'),
-  ListGroup = ReactBootstrap.ListGroup,
-  ListGroupItem = ReactBootstrap.ListGroupItem;
+  UpVote = require('../../buttons/upVote/upVote'),
+  Counter = require('../../counter/counter');
+  import Divider from 'material-ui/Divider';
+
+import {List, ListItem} from 'material-ui/List';
 
 
 class messageDisplayText extends React.Component {
@@ -12,8 +13,9 @@ class messageDisplayText extends React.Component {
 
     const pureMessage = {
       clear: "both",
-      float: "left",
-      border: "1px solid green"};
+      float: "left"
+      //border: "1px solid green"
+    };
 
     const counterStyle = {
       float: "right",
@@ -24,17 +26,15 @@ class messageDisplayText extends React.Component {
 
       <div>
         LIST:
-        <ListGroup>
+        <List>
           {this.props.posts.map(function(post){
             return <div key={ post.id }>
-              <ListGroupItem style = {pureMessage} >{post.postText}
-              <div style = {counterStyle}>
-              <Counter  counter = {post.counter} postId = {post.id}/>
-              </div>
-              </ListGroupItem>
+              <ListItem primaryText={post.postText} leftIcon={<UpVote counter = {post.counter} postId = {post.id}/>} >
+              </ListItem>
+              <Divider />
             </div>
           })}
-        </ListGroup>
+        </List>
       </div>
     );
   }

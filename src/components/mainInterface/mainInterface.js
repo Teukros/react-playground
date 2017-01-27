@@ -3,6 +3,9 @@ import AppBar from 'material-ui/AppBar';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 import Subheader from 'material-ui/Subheader';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
 const React = require('react'),
   storage = require('../../helpers/storage'),
   MessageDisplayBox = require('../messageDisplay/messageDisplayBox/messageDisplayBox'),
