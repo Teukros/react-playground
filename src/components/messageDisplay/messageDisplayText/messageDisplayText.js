@@ -27,7 +27,9 @@ class messageDisplayText extends React.Component {
       <div>
         LIST:
         <List>
+
           {this.props.posts.map(function(post){
+
             return <div key={ post.id }>
               <ListItem primaryText={post.postText} leftIcon={<UpVote counter = {post.counter} postId = {post.id}/>} >
               </ListItem>

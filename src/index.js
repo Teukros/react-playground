@@ -8,7 +8,7 @@ const ReactDOM = require('react-dom');
 const AppComponent = require('components/app/app');
 const storage = require('./helpers/storage');
 
-storage.addPost("This is some random post!")
+// storage.addPost("This is some random post!")
 
 const container = document.querySelector('.app');
 const posts = storage.getPosts();
@@ -24,5 +24,3 @@ ReactDOM.render(
   <App />,
   container
     );
-
-
