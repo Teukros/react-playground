@@ -3,13 +3,12 @@
 const React = require('react'),
   UpVote = require('../../buttons/upVote/upVote'),
   Counter = require('../../counter/counter');
-  import Divider from 'material-ui/Divider';
+import Divider from 'material-ui/Divider';
 
 import {List, ListItem} from 'material-ui/List';
 
-
 class messageDisplayText extends React.Component {
-  render () {
+  render() {
 
     const pureMessage = {
       clear: "both",
@@ -19,46 +18,63 @@ class messageDisplayText extends React.Component {
 
     const counterStyle = {
       float: "right",
-      width:"auto",
-      padding: "10px"};
+      width: "auto",
+      padding: "10px"
+    };
 
-
-if (localStorage.getItem('posts') === null)  {
-console.log("dupa")
-  return (
-  <div>
-    LIST:
-    <List>
-      <div>
-          <ListItem primaryText= "Brak postów"  >
-          </ListItem>
-          <Divider />
-        </div>
-    </List>
-  </div>
-);
-
-}
-
-
-else {
-    return (
-
-      <div>
-        LIST:
-        <List>
-
-          {this.props.posts.map(function(post){
-            return <div key={ post.id }>
-              <ListItem primaryText={post.postText} leftIcon={<UpVote counter = {post.counter} postId = {post.id}/>} >
-              </ListItem>
-              <Divider />
+    if (localStorage.getItem('lastId') == null) {
+      console.log("dupa")
+      return (
+        <div>
+          LIST:
+          <List>
+            <div>
+              <ListItem primaryText="Brak postów"></ListItem>
+              <Divider/>
             </div>
+          </List>
+        </div>
+      );
 
-          })}
-        </List>
-      </div>
-    );
+    } else {
+
+      if (localStorage.getItem('lastId') == "1") {
+        return (
+
+        < div > LIST : <List>
+        <div>
+          <ListItem primaryText="Brak postów"></ListItem>
+          <Divider/>
+        </div>
+      </List> < /div>
+    )
+
+
+
+
+      } else {
+        return (
+
+          <div>
+            LIST:
+            <List>
+
+              {this.props.posts.map(function(post) {
+                return <div key={post.id}>
+                  <ListItem primaryText={post.postText} leftIcon={< UpVote counter = {
+                    post.counter
+                  }
+                  postId = {
+                    post.id
+                  } />}></ListItem>
+                  <Divider/>
+                </div>
+
+              })}
+            </List>
+          </div>
+        );
+  }
 }
 
 
