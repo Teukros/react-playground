@@ -52,7 +52,7 @@ const buttonDivHolder = {
 class messageEditor extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value:"Random post"
+    this.state = {value:"Random post",
 
     };
     this.handleChange = this.handleChange.bind(this);
@@ -82,12 +82,10 @@ class messageEditor extends React.Component {
 
         </div>
         <div style={buttonDivHolder}>
-          <RaisedButton label="Wyślij"  primary={true} style={sendButtonStyle} labelStyle={sendButtonStyle}
-                  onTouchTap= {storage.addPost(this.state.value) }
-           />
+          <RaisedButton label="Wyślij"  primary={true} style={sendButtonStyle} labelStyle={sendButtonStyle} onTouchTap= {console.log("klikam")}/>
         </div>
       </div>
-
+      // storage.addPost(this.state.value),
     /* <form >
       <FormGroup
         controlId="formBasicText"
