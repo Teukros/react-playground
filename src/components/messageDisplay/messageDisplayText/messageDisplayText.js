@@ -23,7 +23,7 @@ class messageDisplayText extends React.Component {
     };
 
     if (localStorage.getItem('lastId') == null) {
-      console.log("dupa")
+
       return (
         <div>
           LIST:
@@ -36,25 +36,11 @@ class messageDisplayText extends React.Component {
         </div>
       );
 
-    } else {
+    }
 
-      if (localStorage.getItem('lastId') == "1") {
+    else {
+
         return (
-
-        < div > LIST : <List>
-        <div>
-          <ListItem primaryText="Brak postów"></ListItem>
-          <Divider/>
-        </div>
-      </List> < /div>
-    )
-
-
-
-
-      } else {
-        return (
-
           <div>
             LIST:
             <List>
@@ -77,6 +63,6 @@ class messageDisplayText extends React.Component {
 
 
   }
-}
+
 
 module.exports = messageDisplayText;
