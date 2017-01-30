@@ -78,7 +78,7 @@ class messageEditor extends React.Component {
 
         </div>
         <div style={buttonDivHolder}>
-          <RaisedButton label="Wyślij" primary={true} style={sendButtonStyle} labelStyle={sendButtonStyle}/>
+          <RaisedButton label="Wyślij tę wiadomość" primary={true} style={sendButtonStyle} labelStyle={sendButtonStyle}/>
         </div>
       </div>
 
