@@ -2,6 +2,8 @@
 import * as ReactBootstrap from 'react-bootstrap';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 const React = require('react'),
   form = ReactBootstrap.Form,
@@ -38,7 +40,7 @@ const floatingLabelStyle = {
 }
 const sendButtonStyle = {
   color: "white",
-  display: "block",
+
   width: "3em"
 }
 const buttonDivHolder = {
@@ -46,42 +48,44 @@ const buttonDivHolder = {
   justifyContent: "center"
 }
 
+
 class messageEditor extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value: 'enter something here'
+    this.state = {value:"Random post",
+
     };
     this.handleChange = this.handleChange.bind(this);
   };
 
-  getValidationState() {
-    const length = this.state.value.length;
-    if (length > 10)
-      return 'success';
-    else if (length > 5)
-      return 'warning';
-    else if (length > 0)
-      return 'error';
-    };
+  // getValidationState() {
+  //   const length = this.state.value.length;
+  //   if (length > 10)
+  //     return 'success';
+  //   else if (length > 5)
+  //     return 'warning';
+  //   else if (length > 0)
+  //     return 'error';
+  //   };
 
   handleChange(e) {
 
     this.setState({value: e.target.value});
+
   };
 
   render() {
     return (
       <div>
         <div style={divForInputStyle}>
-          <TextField id="text-field-controlled" value={this.state.value} onChange={this.handleChange} id="formBasicText" defaultValue="dupa" inputStyle={inputStyle} textareaStyle={inputStyle} multiLine="true" style={mainAreaInputStyle} underlineShow="true" underlineStyle={underlineStyle} floatingLabelFixed="true" floatingLabelText="Working example with validation" floatingLabelStyle={floatingLabelStyle}/>
+          <TextField id="text-field-controlled"  onChange={this.handleChange} hintText="Place for your suggestions" id="formBasicText" inputStyle={inputStyle} textareaStyle={inputStyle} multiLine={true} style={mainAreaInputStyle}  underlineShow={true} underlineStyle={underlineStyle} floatingLabelFixed={true} floatingLabelText="Working example with validation" floatingLabelStyle={floatingLabelStyle}   />
 
         </div>
         <div style={buttonDivHolder}>
-          <RaisedButton label="Wyślij teraz" primary={true} style={sendButtonStyle} labelStyle={sendButtonStyle}/>
+          <RaisedButton label="Wyślij tego posta- Pozdrawiam, Tomek"  primary={true} style={sendButtonStyle} labelStyle={sendButtonStyle} onTouchTap= {console.log("klikam")}/>
         </div>
       </div>
-
+      // storage.addPost(this.state.value),
     /* <form >
       <FormGroup
         controlId="formBasicText"

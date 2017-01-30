@@ -26,7 +26,7 @@ class UpVote extends React.Component {
   };
 
   render(){
-    console.log(this.state.localCounter)
+    // console.log(this.state.localCounter)
     return (
       <FlatButton
         backgroundColor="#a4c639"

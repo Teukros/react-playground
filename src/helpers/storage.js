@@ -6,8 +6,9 @@ class Storage {
   static initializeId () {
     lastId = JSON.parse(localStorage.getItem( 'lastId' ));
     if ( lastId == null ) {
-      location.reload(true);
-      localStorage.setItem( 'lastId',0 );
+      // location.reload(true);
+      // localStorage.setItem( 'lastId',0 );
+      console.log('last id unknow')
     }
   }
 
@@ -39,8 +40,8 @@ class Storage {
   static upVote(upvotedMessageId) {
     const posts = this.getPosts();
     const searchedIndex = posts.map(function(post) { return post.id; }).indexOf(upvotedMessageId);
-    const currentUpvotesCount = posts[searchedIndex].upvotes;
-    posts[searchedIndex].upvotes = currentUpvotesCount + 1;
+    const currentUpvotesCount = posts[searchedIndex].upVotes;
+    posts[searchedIndex].upVotes = currentUpvotesCount + 1;
     localStorage.setItem('posts', JSON.stringify(posts));
     }
 
