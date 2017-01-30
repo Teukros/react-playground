@@ -82,7 +82,7 @@ class messageEditor extends React.Component {
 
         </div>
         <div style={buttonDivHolder}>
-          <RaisedButton label="Wyślij"  primary={true} style={sendButtonStyle} labelStyle={sendButtonStyle} onTouchTap= {console.log("klikam")}/>
+          <RaisedButton label="Wyślij tego posta- Pozdrawiam, Tomek"  primary={true} style={sendButtonStyle} labelStyle={sendButtonStyle} onTouchTap= {console.log("klikam")}/>
         </div>
       </div>
       // storage.addPost(this.state.value),
