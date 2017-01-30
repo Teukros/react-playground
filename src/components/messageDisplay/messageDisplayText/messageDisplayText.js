@@ -22,6 +22,26 @@ class messageDisplayText extends React.Component {
       width:"auto",
       padding: "10px"};
 
+
+if (localStorage.getItem('posts') === null)  {
+console.log("dupa")
+  return (
+  <div>
+    LIST:
+    <List>
+      <div>
+          <ListItem primaryText= "Brak postów"  >
+          </ListItem>
+          <Divider />
+        </div>
+    </List>
+  </div>
+);
+
+}
+
+
+else {
     return (
 
       <div>
@@ -29,16 +49,19 @@ class messageDisplayText extends React.Component {
         <List>
 
           {this.props.posts.map(function(post){
-
             return <div key={ post.id }>
               <ListItem primaryText={post.postText} leftIcon={<UpVote counter = {post.counter} postId = {post.id}/>} >
               </ListItem>
               <Divider />
             </div>
+
           })}
         </List>
       </div>
     );
+}
+
+
   }
 }
 
