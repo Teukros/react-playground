@@ -39,8 +39,8 @@ class Storage {
   static upVote(upvotedMessageId) {
     const posts = this.getPosts();
     const searchedIndex = posts.map(function(post) { return post.id; }).indexOf(upvotedMessageId);
-    const currentUpvotesCount = posts[searchedIndex].upvotes;
-    posts[searchedIndex].upvotes = currentUpvotesCount + 1;
+    const currentUpvotesCount = posts[searchedIndex].upVotes;
+    posts[searchedIndex].upVotes = currentUpvotesCount + 1;
     localStorage.setItem('posts', JSON.stringify(posts));
     }
 
